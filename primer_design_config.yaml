@@ -1,0 +1,48 @@
+sequence_file: /gscratch/stergachislab/bmallo/large_home/Projects/APC_Promoter_SGE/primer_design/APC1B_gDNA.fa
+target_region:
+  core_start: 5843
+  core_end: 9748
+  min_amplicon: 4000
+  max_amplicon: 8000
+  forward_region:
+  - 1
+  - 5842
+  reverse_region:
+  - 9749
+  - 15013
+primer_constraints:
+  min_length: 18
+  max_length: 25
+  max_guanines: 2
+  no_gc_3prime_bases: 3
+  tm_min: 50.0
+  tm_max: 60.0
+  min_gc_content: 20.0
+  max_gc_content: 60.0
+  max_poly_base: 3
+  check_specificity: true
+  allow_multiple_exact_matches: false
+  specificity_min_match_length: 15
+  specificity_allow_mismatches: 2
+  Na: 0.0
+  K: 50.0
+  Mg: 1.5
+  dNTPs: 0.0
+  primer_conc: 300.0
+pairing_constraints:
+  max_tm_difference: 5.0
+  max_primer_reuse: 2
+  min_primer_spacing: 25
+scoring_weights:
+  guanine_penalty: 10.0
+  guanine_3prime_penalty: 50.0
+  tm_deviation_penalty: 1.0
+  gc_deviation_penalty: 0.5
+  length_deviation_penalty: 0.5
+  hairpin_penalty: 5.0
+  self_dimer_penalty: 5.0
+  poly_base_penalty: 3.0
+num_primer_sets: 10
+output_file: APC1B_primers.txt
+output_dir: results
+verbose: false
