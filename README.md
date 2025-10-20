@@ -1,6 +1,6 @@
 # DAF-seq Primer Designer
 
-A Python pipeline for designing PCR primers optimized for DAF-seq treated DNA. This tool addresses the unique challenge that cytosine deamination creates: converted cytosines become uracils (and subsequently thymines after PCR), reducing primer binding efficiency when primers contain guanines.
+A Python pipeline for designing PCR primers optimized for DAF-seq treated DNA. 
 
 ## Table of Contents
 
@@ -20,11 +20,11 @@ A Python pipeline for designing PCR primers optimized for DAF-seq treated DNA. T
 
 - **DAF-seq primer design**: Minimizes guanines in primers and penalizes G positions near the 3' end
 - **Flexible region specification**: Define target regions by coordinates or DNA sequence
-- **Comprehensive primer evaluation**: 
-  - Tm calculation (Primer3-compatible)
+- **Primer evaluation**: 
+  - Tm calculation (Primer3-based)
   - Secondary structure checking (hairpins, self-dimers, primer-dimers)
-  - Specificity checking (no off-target binding within provided sequence region)
-- **Diversity enforcement**: Prevents overlapping primers in final results
+  - Specificity checking (checks for off-target binding within provided sequence region)
+- **Diversity enforcement**: Optionally prevent overlapping primers in final results
 - **Customizable scoring**: Adjustable penalties for all primer properties
 - **Silent or verbose mode**: Run quietly for batch processing or with detailed output
 
@@ -173,7 +173,7 @@ primer_constraints:
   min_length: 18
   max_length: 25
   
-  # Guanine restrictions (key for DAF-seq primers!)
+  # Guanine restrictions 
   max_guanines: 2
   no_gc_3prime_bases: 3  # No G or C in last 3 bases
   
@@ -510,45 +510,3 @@ For large templates (>100 kb):
 - **`primer_designer.py`**: Main pipeline script
 
 ---
-
-## Citation
-
-If you use this tool in your research, please cite:
-
-```
-[Your citation information here]
-```
-
----
-
-## Support
-
-For issues, questions, or feature requests:
-- Check the [Troubleshooting](#troubleshooting) section
-- Review example configurations
-- Ensure all dependencies are installed
-
----
-
-## License
-
-[Your license information here]
-
----
-
-## Changelog
-
-### Version 1.0
-- Initial release
-- Core primer design functionality
-- DAF-seq-aware scoring
-- Specificity checking
-- Diversity enforcement
-
----
-
-## Acknowledgments
-
-- BioPython for sequence analysis tools
-- Primer3 team for Tm calculation methods
-- [Any other acknowledgments]
